@@ -1,0 +1,16 @@
+Changes
+MANIFEST
+META.yml # Will be created by "make dist"
+Makefile.PL
+README
+lib/Math/StochasticProcess.pm
+lib/Math/StochasticProcess/Event.pm
+lib/Math/StochasticProcess/Event/Tuple.pm
+lib/Math/StochasticProcess/RandomVariable.pm
+t/00-load.t
+t/boilerplate.t
+t/pod-coverage.t
+t/pod.t
+t/d6.t
+t/d6-a.t
+t/d6-b.t
