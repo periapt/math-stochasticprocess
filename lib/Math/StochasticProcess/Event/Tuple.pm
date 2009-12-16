@@ -203,7 +203,7 @@ sub copy {
         }
     }
 
-    bless $copy, ref($self);
+    bless $copy, ref $self;
     return $copy;
 }
 
@@ -280,7 +280,7 @@ should equal the sum of the two original Events.
 sub merge {
     my $self = shift;
     my $other = shift;
-    croak "cannot merge on account of class" unless ref($self) eq ref($other);
+    croak "cannot merge on account of class" unless ref $self eq ref $other;
     if ($self->signature() ne $other->signature()) {
         croak "cannot merge on account of signature";
     }
