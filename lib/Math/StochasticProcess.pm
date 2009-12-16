@@ -146,7 +146,7 @@ sub run {
             print {$self->{log_file_handle}} "RV: $e -> $rv{$e}\n";
         }
     }
-
+    return;
 }
 
 =head2 event
@@ -321,7 +321,7 @@ sub _merge {
     else {
         $state->{$signature} = $event;
     }
-
+    return;
 }
 
 =head1 AUTHOR

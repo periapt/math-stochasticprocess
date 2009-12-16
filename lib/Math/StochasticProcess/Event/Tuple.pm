@@ -292,6 +292,7 @@ sub merge {
                         $self->{tuple_probability},
                         $other->{tuple_probability});
     }
+    return;
 }
 
 =head2 debug

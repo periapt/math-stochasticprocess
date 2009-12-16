@@ -139,6 +139,7 @@ sub merge {
     my $other = shift;
     my $self_prob = shift;
     my $other_prob = shift;
+    return;
 }
 
 =head2 copy
