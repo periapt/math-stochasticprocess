@@ -156,16 +156,16 @@ sub copy {
     my $change = shift;
     my $copy = {internal=>$self->{internal}};
     $copy->{validate_cb} = $self->{validate_cb} if exists $self->{validate_cb};
-    if (!defined($change)) {
+    if (!defined $change) {
         $copy->{value} = $self->{value};
     }
-    elsif (ref($change) eq "CODEREF") {
+    elsif (ref $change eq "CODEREF") {
         $copy->{value} = &$change($self->{value});
     }
     else {
         $copy->{value} = $change;
     }
-    bless $copy, , ref($self);
+    bless $copy, ref $self;
     croak "$change does not meet constraint" unless $copy->checkValue();
 
     return $copy;

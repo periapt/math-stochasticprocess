@@ -160,7 +160,7 @@ single non-object parameter a signature and returns the corresponding event.
 sub event {
     my $self = shift;
     if (scalar(@_) > 0) {
-        return $self->{terminal_events}->{shift()};
+        return $self->{terminal_events}->{shift};
     }
     return %{$self->{terminal_events}};
 }
