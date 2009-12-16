@@ -80,7 +80,7 @@ sub new {
     );
     my $self = \%options;
     bless $self, $class;
-    die "$options{value} does not meet constraint" unless $self->checkValue();
+    croak "$options{value} does not meet constraint" unless $self->checkValue();
 
     return $self;
 }
@@ -166,7 +166,7 @@ sub copy {
         $copy->{value} = $change;
     }
     bless $copy, , ref($self);
-    die "$change does not meet constraint" unless $copy->checkValue();
+    croak "$change does not meet constraint" unless $copy->checkValue();
 
     return $copy;
 }

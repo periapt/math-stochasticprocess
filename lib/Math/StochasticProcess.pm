@@ -179,7 +179,7 @@ sub expectedValue {
     my $self = shift;
     my %rv = $self->{seed_event}->randomVariable();
     if (scalar(@_) > 0) {
-        die "no such random variable: $_[0]" unless exists $rv{$_[0]};
+        croak "no such random variable: $_[0]" unless exists $rv{$_[0]};
         return $self->_calculateExpectedValue($_[0]);
     }
     foreach my $r (keys %rv) {

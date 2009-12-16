@@ -2,6 +2,7 @@ package Math::StochasticProcess::Event;
 
 use warnings;
 use strict;
+use Carp;
 
 =head1 NAME
 
@@ -47,7 +48,7 @@ Must return a number between 0 and 1 inclusive.
 
 sub probability {
     my $self = shift;
-    die "not implemented yet";
+    croak "not implemented yet";
 }
 
 =head2 isResolved
@@ -59,7 +60,7 @@ and further iterations of this event are not required.
 
 sub isResolved {
     my $self = shift;
-    die "not implemented yet";
+    croak "not implemented yet";
 }
 
 =head2 iterate
@@ -73,7 +74,7 @@ parent event.
 
 sub iterate {
     my $self = shift;
-    die "not implemented yet";
+    croak "not implemented yet";
 }
 
 =head2 randomVariable
@@ -100,7 +101,7 @@ that have been arrived at by different routes.
 
 sub signature {
     my $self = shift;
-    die "not implemented yet";
+    croak "not implemented yet";
 }
 
 =head2 merge
@@ -113,7 +114,7 @@ Event should equal the sum of the two original Events.
 
 sub merge {
     my $self = shift;
-    die "not implemented yet";
+    croak "not implemented yet";
 }
 
 =head2 debug
@@ -151,7 +152,7 @@ distribution?
     my $analysis = undef;
     if (defined($ARGV[1])) {
         $logfh = FileHandle->new;
-        open($logfh, ">$ARGV[1].log") or die "could not open log file";
+        open($logfh, ">$ARGV[1].log") or croak "could not open log file";
         $analysis = Math::StochasticProcess->new
                                         (
                                             seed_event=>$seed_event,

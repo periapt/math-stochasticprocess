@@ -165,7 +165,7 @@ sub iterate {
     if (exists $self->{iterate_cb}) {
         return $self->{iterate_cb}($self);
     }
-    die "not implemented yet";
+    croak "not implemented yet";
 }
 
 =head2 copy
@@ -224,7 +224,7 @@ sub randomVariable {
             my $rv = $self->{random_variables}->{$name};
             return $rv->value();
         }
-        die "$name is not a random variable";
+        croak "$name is not a random variable";
     }
     my %rv = ();
     foreach my $r (keys %{$self->{random_variables}}) {
@@ -280,11 +280,11 @@ should equal the sum of the two original Events.
 sub merge {
     my $self = shift;
     my $other = shift;
-    die "cannot merge on account of class" unless ref($self) eq ref($other);
+    croak "cannot merge on account of class" unless ref($self) eq ref($other);
     if ($self->signature() ne $other->signature()) {
-        die "cannot merge on account of signature";
+        croak "cannot merge on account of signature";
     }
-    die "cannot merge on account of signature" unless $self->signature() eq $other->signature();
+    croak "cannot merge on account of signature" unless $self->signature() eq $other->signature();
     $self->{tuple_probability} += $other->{tuple_probability};
     foreach my $r (keys %{$self->{random_variables}}) {
         $self->{random_variables}->{$r}->merge(
@@ -369,7 +369,7 @@ using the Tuple class.
     my $analysis = undef;
     if (defined($ARGV[1])) {
         $logfh = FileHandle->new;
-        open($logfh, ">$ARGV[1]") or die "could not open log file";
+        open($logfh, ">$ARGV[1]") or croak "could not open log file";
         $analysis = Math::StochasticProcess->new(
                                 seed_event=>$seed_event,
                                 tolerance=>0.0000000000000001,
