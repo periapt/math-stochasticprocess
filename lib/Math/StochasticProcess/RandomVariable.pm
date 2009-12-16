@@ -11,17 +11,17 @@ Math::StochasticProcess::RandomVariable - Part of the Math::StochasticProcess::T
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
-See L<Math::StochasticProcess::Event::Tuple>. The RandomVariable class
+See L<Math::StochasticProcess::Event::Tuple>. The C<RandomVariable> class
 represents a numerical random variable. The Tuple class represents a set of
-named RandomVariables, and also controls how RandomVariables change.
+named random variables, and also controls how random variables change.
 
 =head1 FUNCTIONS
 
@@ -87,7 +87,7 @@ sub new {
 
 =head2 checkValue
 
-This function checks that the value of the RandomVariable satisfies its internal
+This function checks that the value of the C<RandomVariable> satisfies its internal
 constraint.
 
 =cut
@@ -129,7 +129,7 @@ sub signature {
 
 This is a utility function for Math::StochasticProcess::Event::Tuple::merge. We
 choose this interface to allow for the possibility that derived classes might
-want to regard "similar" values as essentially indentical. In such a case the
+want to regard "similar" values as essentially identical. In such a case the
 probabilities would be required to set the new value to a weighted average.
 
 =cut
@@ -143,9 +143,9 @@ sub merge {
 
 =head2 copy
 
-This is a utility function for Math::StochasticProcess::Event::Tuple::copy. It
-is effectively a constructor of the RandomVariable. It returns a copy of the
-RandomVariable with a change specified by the $change parameter. This might be a
+This is a utility function for C<Math::StochasticProcess::Event::Tuple::copy>. It
+is effectively a constructor of the C<RandomVariable>. It returns a copy of the
+C<RandomVariable> with a change specified by the C<$change> parameter. This might be a
 new value or callback which is applied to the old value to get the new value.
 
 =cut

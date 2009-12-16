@@ -7,3 +7,6 @@ Revision history for Math-StochasticProcess
 0.02	2-12-2008
         Updated license. Reformatted text. Fixed README. Enforced
         Params::Validate dependency.
+
+0.03	16-12-2009
+	Added hygiene test scripts: Changes, Manifest, Prereq, Podspell etc. 

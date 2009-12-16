@@ -11,11 +11,11 @@ Math::StochasticProcess - Stochastic Process
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -190,7 +190,7 @@ sub expectedValue {
 
 =head2 _calculateExpectedValue
 
-Internal function. Used by "expectedValue".
+Internal function. Used by C<expectedValue>.
 
 =cut
 

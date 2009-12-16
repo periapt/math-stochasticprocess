@@ -9,11 +9,11 @@ Math::StochasticProcess::Event - Base class for events.
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -78,7 +78,7 @@ sub iterate {
 
 =head2 randomVariable
 
-This function must be overriden if you wish to use randomVariables as well as
+This function must be overridden if you wish to use randomVariables as well as
 probabilities. If only the object argument is presented, it must return a hash
 keyed by all the random variable names in play, with their current values as the
 hash value. If given an argument it must return the current value of the so
@@ -130,7 +130,7 @@ sub debug {
 =head1 EXAMPLE
 
 Suppose you roll a six-sided die and keep a running total of the results.
-You stop rolling when the running total reaches a pre-determined goal. What is
+You stop rolling when the running total reaches a predetermined goal. What is
 the expected number of times that you roll the die, and what is the probability
 distribution?
 

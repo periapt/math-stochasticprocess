@@ -16,11 +16,11 @@ Math::StochasticProcess::Event::Tuple - Boilerplate code deriving from Math::Sto
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -211,7 +211,7 @@ sub copy {
 
 This is straightforward implementation of the inherited function, for which see
 L<Math::StochasticProcess::Event>. It excludes internal random variables from
-the argumentless form, because they are internal. We allow them when asked for
+the argument-less form, because they are internal. We allow them when asked for
 explicitly because it is useful.
 
 =cut
