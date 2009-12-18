@@ -10,7 +10,9 @@ use Math::StochasticProcess;
 use Math::StochasticProcess::Event;
 use Math::StochasticProcess::Event::Tuple qw(RESOLVED_VAR_NAME);
 use Math::StochasticProcess::RandomVariable;
-use FileHandle;
+use lib qw(t/lib);
+use LogDir;
+my $logdir = LogDir->new;
 
 # experiment: Roll a d6 repeatedly until you have reached the goal.
 # What is the expected number of rounds before reaching the goal
@@ -266,9 +268,7 @@ sub goal
     ok( $seed_event, 'created seed event' );
     ok( $seed_event->isa('Math::StochasticProcess::Event'), 'passes isa test' );
 
-    my $logfh = FileHandle->new;
-    open($logfh, ">test${goal}-a.log") or die "could not open log file";
-
+    my $logfh = $logdir->spawn_file("test${goal}-a.log");
     my $analysis = Math::StochasticProcess->new(seed_event=>$seed_event, tolerance=>0.0000000000000001, hard_sanity_level=>0.0000001,log_file_handle=>$logfh);
     ok( $analysis, 'created analysis object' );
 

@@ -10,7 +10,8 @@ WriteMakefile(
     PL_FILES            => {},
     PREREQ_PM => {
         'Test::More' => 0,
-	'Params::Validate' => 0
+	'Params::Validate' => 0,
+	'File::Spec' => 0 # needed for test log files
     },
     LICENSE		=> 'perl',
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
