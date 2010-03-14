@@ -10,3 +10,7 @@ Revision history for Math-StochasticProcess
 
 0.03	16-12-2009
 	Added hygiene test scripts: Changes, Manifest, Prereq, Podspell etc. 
+
+0.04    9-3-2010
+	Added dependecy on Exporter 5.57 and switched to Module::Build.
+

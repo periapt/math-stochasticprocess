@@ -4,6 +4,7 @@ lib/Math/StochasticProcess/Event.pm
 lib/Math/StochasticProcess/Event/Tuple.pm
 lib/Math/StochasticProcess/RandomVariable.pm
 Makefile.PL
+Build.PL
 MANIFEST
 META.yml			# Will be created by "make dist"
 README
